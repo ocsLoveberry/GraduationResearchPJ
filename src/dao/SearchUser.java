@@ -1,27 +1,29 @@
-
 package dao;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SearchUser {
-     public boolean searchuser(String SEKI_NO,char[] PASSWORD){
+	static String decryptKey = "loveberry";
+	public boolean searchuser(String SEKI_NO,char[] PASSWORD) {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
         String s_password = new String(PASSWORD);
-         // DBManagerのインスタンスを生成
-         Accesser manager = new Accesser();
+//          DBManagerのインスタンスを生成
+        Accesser manager = new Accesser();
 
          try {
-             // 接続する
+//          	接続する
             conn = Accesser.getConnection();
             st = conn.createStatement();
-
-            String sql = "SELECT * FROM STUDENT_TBL";
+            String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey + "') AS PASSWORD FROM STUDENT_TBL";
             rs = st.executeQuery(sql);
-            //レコードの値を取得
+
+//
+//             レコードの値を取得
             while (rs.next()) {
             	String LocalSeki_no = rs.getString("SEKI_NO");
             	String LocalPassword = rs.getString("PASSWORD");
@@ -40,5 +42,7 @@ public class SearchUser {
              manager.close(conn);
          }
          return false;
-     }
- }
+	}
+}
+
+// INSERT INTO STUDENT_TBL (SEKI_NO, PASSWORD) VALUES ('ID',HEX(AES_DECRYPT('PASS','loveberry')));
