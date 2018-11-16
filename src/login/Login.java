@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.SearchUser;
+import sessionManager.sessionManager;
 
 /**
  * Servlet implementation class Login
@@ -43,10 +44,14 @@ public class Login extends HttpServlet {
 		String UID = request.getParameter("UID");
 		char[] password = request.getParameter("pass").toCharArray();
 
+		System.out.println("UID:"+UID);
+		System.out.println("pass"+password.toString());
 		SearchUser su = new SearchUser();
 		if(su.searchuser(UID,password)) {
 			System.out.println("該当ユーザーを検出しました：セッションを作成");
-//			SessionManager.creat();
+			sessionManager sm = new sessionManager();
+			sm.createSession(request,UID);
+			response.sendRedirect("stu_top.html");
 		}
 	}
 }

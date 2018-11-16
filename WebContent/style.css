@@ -4,9 +4,14 @@ body,p,div,input{margin: 0}
 
 #form2{							/*範囲の設定*/
 	width: 400px;				/*幅の設定*/
-    margin: 200px auto;		/*外側の空白の設定*/
+    margin: 100px auto;		/*外側の空白の設定*/
     padding: 20px;				/*内側の空白の設定*/
 
+}
+
+#form1{
+	width:550px;
+	margin:50px auto;
 }
 
 form2 p{
@@ -52,15 +57,15 @@ input[type="submit"] {		/*ログインボタンの見た目の設定*/
     padding: 0.25em 0.5em;/*内側の空白の設定*/
     text-decoration: none;	/*テキストの見た目の設定*/
     color: #FFF;					/*文字色の設定*/
-    background: #fd9535;/*背景色*/
+    background: #fd9535;	/*背景色*/
     border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
-    border-radius: 4px;/*角の丸み*/
+    border-radius: 4px;		/*角の丸み*/
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);/*ボタンの影の設定*/
     font-weight: bold;			/*文字の太さの設定*/
 }
 
-input[type="submit"]:active {	/*ボタンが押されたときの設定*/
-    border-bottom: solid 2px #fd9535;		/*ふちの設定*/
+input[type="submit"]:active {						/*ボタンが押されたときの設定*/
+    border-bottom: solid 2px #fd9535;				/*ふちの設定*/
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);		/*影の設定*/
 }
 
@@ -94,7 +99,7 @@ body{
 	height:100%;
 	background-image: url("img/wallpaper2you_243659.jpg");
 	background-repeat:no-repeat;
-	background-attachment:fixed;
-	background-position:center center;
+	background-attachment:fixed;		/*背景画像をスクロールしないように固定*/
+	background-position:center center; /*常に画像が中央に表示される*/
 	background-size:cover;
 }

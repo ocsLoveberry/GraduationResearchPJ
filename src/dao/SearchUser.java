@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SearchUser {
+//	暗号化するためのキー
 	static String decryptKey = "loveberry";
 	public boolean searchuser(String SEKI_NO,char[] PASSWORD) {
         Connection conn = null;
@@ -45,4 +46,4 @@ public class SearchUser {
 	}
 }
 
-// INSERT INTO STUDENT_TBL (SEKI_NO, PASSWORD) VALUES ('ID',HEX(AES_DECRYPT('PASS','loveberry')));
+// INSERT INTO STUDENT_TBL (SEKI_NO, PASSWORD) VALUES ('ID',HEX(AES_ENCRYPT('PASS','loveberry')));
