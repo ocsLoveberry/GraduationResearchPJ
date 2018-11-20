@@ -44,14 +44,14 @@ public class Login extends HttpServlet {
 		String UID = request.getParameter("UID");
 		char[] password = request.getParameter("pass").toCharArray();
 
-		System.out.println("UID:"+UID);
-		System.out.println("pass"+password.toString());
 		SearchUser su = new SearchUser();
 		if(su.searchuser(UID,password)) {
 			System.out.println("該当ユーザーを検出しました：セッションを作成");
 			sessionManager sm = new sessionManager();
 			sm.createSession(request,UID);
 			response.sendRedirect("stu_top.html");
+		}else {
+			response.sendRedirect("Login.html");
 		}
 	}
 }
