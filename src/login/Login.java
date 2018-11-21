@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.SearchUser;
+import dao.SQLExecuter;
 import sessionManager.sessionManager;
 
 /**
@@ -41,11 +41,12 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		Login.htmlのフォームの値を取得する
 		String UID = request.getParameter("UID");
 		char[] password = request.getParameter("pass").toCharArray();
-
-		SearchUser su = new SearchUser();
-		if(su.searchuser(UID,password)) {
+//		データ
+		SQLExecuter se = new SQLExecuter();
+		if(se.searchuser(UID,password)) {
 			System.out.println("該当ユーザーを検出しました：セッションを作成");
 			sessionManager sm = new sessionManager();
 			sm.createSession(request,UID);

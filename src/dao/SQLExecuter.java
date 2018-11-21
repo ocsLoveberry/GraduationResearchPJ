@@ -5,13 +5,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class SearchUser {
-//	暗号化するためのキー
+public class SQLExecuter {
+//	AESで復号化するためのキー
 	static String decryptKey = "loveberry";
 	public boolean searchuser(String SEKI_NO,char[] PASSWORD) {
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
+//        passwordをchar[]からStringに変換
         String s_password = new String(PASSWORD);
 //          DBManagerのインスタンスを生成
         Accesser manager = new Accesser();
