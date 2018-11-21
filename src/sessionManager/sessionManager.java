@@ -8,7 +8,7 @@ public class sessionManager {
 
 		HttpSession session = request.getSession(false);
 		if(session == null) {
-			
+
 		}else {
 			Object loginCheck = session.getAttribute("login");
 			if(loginCheck == null) {
@@ -18,7 +18,6 @@ public class sessionManager {
 			session.setAttribute("login", seki_no);
 			System.out.println("login"+session.getAttribute("login"));
 		}
-		session.removeAttribute("login");
 
 	}
 
