@@ -46,7 +46,7 @@ public class Login extends HttpServlet {
 		char[] password = request.getParameter("pass").toCharArray();
 //		データ
 		SQLExecuter se = new SQLExecuter();
-		if(se.searchuser(UID,password)) {
+		if(se.searchRaspUser(UID,password)) {
 			System.out.println("該当ユーザーを検出しました：セッションを作成");
 			sessionManager sm = new sessionManager();
 			sm.createSession(request,UID);

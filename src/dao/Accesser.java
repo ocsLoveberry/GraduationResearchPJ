@@ -13,6 +13,12 @@ public class Accesser {
 	private static String user = "root";
 	private static String pass = "root";
 
+	private static String raspDbName = "LOVE_BERRY";
+	private static String raspDriverName = "com.mysql.jdbc.Driver";
+	private static String raspUrl = "jdbc:mysql://10.15.154.63/" + raspDbName;
+	private static String raspUser = "admin";
+	private static String raspPass = "root";
+
 	public static Connection getConnection() {
 		Connection con = null;
 		try {
@@ -25,6 +31,21 @@ public class Accesser {
 		}
 		return con;
 	}
+
+	public static Connection getRaspConnection() {
+		Connection con = null;
+		try {
+			Class.forName(raspDriverName);
+			con = DriverManager.getConnection(raspUrl, raspUser, raspPass);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+
+
 
 	public void close(Connection con) {
 		try {

@@ -24,14 +24,18 @@ body{
 
 #main{
 	width:30%;
-	height:300px;
 	text-align:center;
 	margin-top:5%;
 	margin-right:auto;
 	margin-left:auto;
 	background-color: white;
+	padding-top:10px;
+	overflow: hidden;
 
+}
 
+div.punch_table {
+	margin: 20px;
 }
 table, td, th{
     border: 1px solid gray;
@@ -39,10 +43,8 @@ table, td, th{
 
 table.punch_result_table {
 	width: 400px;
-	padding:30px;
 	table-layout: auto;
 	margin: auto;
-	border-top: 30px;
 }
 div.main p {
 	margin:20px;
