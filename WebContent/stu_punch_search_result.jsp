@@ -43,12 +43,18 @@
 					</tr>
 				</thead>
 				<tbody>
+					<% try {%>
 					<% for(int i = 0; i < 1; i++){ %>
 					<tr>
 						<td><%=resultStuPunch.get(i)[1] %></td>
 						<td><%=resultStuPunch.get(i)[2] %></td>
 					</tr>
 					<% } %>
+					<%}catch(Exception e){
+						e.printStackTrace();
+					}
+						%>
+
 				</tbody>
 			</table>
 		</div>

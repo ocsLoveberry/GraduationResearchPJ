@@ -93,17 +93,20 @@ public class SQLExecuter {
 		return false;
 	}
 
-	public List<String[]> searchStuPunch(String seki_no,String formDate, String formClassroom) {
+	public List<String[]> searchStuPunch(String seki_no,String formEntryDate, String formClassroom) {
 		Connection conn = null;
 		Statement st = null;
 		ResultSet rs = null;
 		List<String[]> resultStuPunch = new ArrayList<>();
 		System.out.println("searchStuPunch:"+seki_no);
-		System.out.println("searchStuPunch:"+formDate);
+		System.out.println("searchStuPunch:"+formEntryDate);
 		System.out.println("searchStuPunch:"+formClassroom);
-		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no;
-//		String sql2 = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no + "AND LOBE_ID =" + formClassroom;
+//		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no;
+//		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no  + " AND LOBE_ID = " + formClassroom;
+//		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = " + formDate + " AND LOBE_ID = " + formClassroom;
 
+//		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = " + formEntryDate;
+		String sql = "SELECT * FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' AND LOBE_ID = " + formClassroom;
 		try {
 			conn = Accesser.getRaspConnection();
 			st = conn.createStatement();
