@@ -7,20 +7,9 @@ public class sessionManager {
 	public void createSession(HttpServletRequest request, String seki_no) {
 
 //		セッションが存在しないか？
-		HttpSession session = request.getSession(false);
-		if(session == null) {
-//		セッションが既に存在するとき
-		}else {
-
-			Object loginCheck = session.getAttribute("login");
-			if(loginCheck == null) {
-				System.out.println("ログインに関するデータがありません");
-			}
-//			新しいセッションを作成する
-			session = request.getSession(true);
-			session.setAttribute("login", seki_no);
-			System.out.println("login"+session.getAttribute("login"));
-		}
+		HttpSession session = request.getSession();
+		session.setAttribute("seki_no", seki_no);
+		System.out.println("sessionは"+session.getAttribute("seki_no")+"やで");
 
 	}
 
