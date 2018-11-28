@@ -50,9 +50,10 @@ public class StuPunchSearch extends HttpServlet {
 //		取り出し方 resultStuPunch.get(int index【range 0 ~】)[int index【range 0 ~ 2】]
 //		ex)resultStuPunch.get(0)[0]
 //		解説)listの0番目に入ってるStringの配列の0番目の要素を取り出す
-		System.out.println(resultStuPunch.get(0)[1]);
-		System.out.println(resultStuPunch.get(0)[2]);
-
+//		System.out.println(resultStuPunch.get(0)[1]);
+//		System.out.println(resultStuPunch.get(0)[2]);
+		request.setAttribute("resultStuPunch", resultStuPunch);
+		getServletConfig().getServletContext().getRequestDispatcher("/stu_punch_search_result.jsp").forward(request, response);
 	}
 
 }
