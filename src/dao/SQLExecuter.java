@@ -24,8 +24,8 @@ public class SQLExecuter {
 			//          	接続する
 			conn = Accesser.getRaspConnection();
 			st = conn.createStatement();
-			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey
-					+ "') AS PASSWORD FROM STUDENT_TBL";
+//			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey + "') AS PASSWORD FROM STUDENT_TBL";
+			String sql = "SELECT SEKI_NO,PASSWORD FROM STUDENT_TBL";
 			rs = st.executeQuery(sql);
 
 			//

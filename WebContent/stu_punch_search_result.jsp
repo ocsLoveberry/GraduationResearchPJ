@@ -50,8 +50,9 @@
 						<td><%=resultStuPunch.get(i)[2] %></td>
 					</tr>
 					<% } %>
-					<%}catch(Exception e){
+					<%}catch(IndexOutOfBoundsException e){
 						e.printStackTrace();
+						getServletConfig().getServletContext().getRequestDispatcher("/stu_punch_search.html").forward(request, response);
 					}
 						%>
 

@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body,p,div,input{margin: 0}
+
+#list{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	margin:400px auto;
+
+	width:800px;
+	height:100px;
+
+	border: 1px solid #555;
+
+	background-color:#FFF;
+}

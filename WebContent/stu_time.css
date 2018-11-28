@@ -6,7 +6,7 @@
 	padding:5px auto;
 }
 
-.month{
+#month{
 	font-size:30px;
 	text-align:right;
 }
@@ -27,6 +27,12 @@ p.back{
 p.back input{
 	margin:0px 20px;
 }
+p.class{
+		border-collapse:collapse;
+		-ms-writing-mode: tb-rl;
+  		writing-mode: vertical-rl;
+  		white-space: nowrap
+  }
 
 input[type="submit"]{
 	width:80px;
@@ -34,19 +40,47 @@ input[type="submit"]{
 	font-size:20px;
 }
 
+/*table{
+	border-collapse: collapse;
+  	border-spacing: 0;
+}*/
+
 #table{
 	width:auto;
 	margin:60px 20px;
 	padding:50px auto;
+	border: 1px solid #555;
+	background-color:#FFFFFF;
+}
+#table th,#table td{
+	display:block;		/*セルをブロック化*/
 }
 
-p.class{
-		border-collapse:collapse;
-		-ms-writing-mode: tb-rl;
-  		writing-mode: vertical-rl;
-  		white-space: nowrap
+#table tr{
+	display:inline-block;	/*横並びにする*/
+}
+
+#table  tbody{
+	overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    display:block;
+}
+
+#a{
+	  cursor:pointer;		/*セルを選択時にポインターの変更*/
 }
 
 td,th{
+	width:60px;
+	padding:10px;
+	text-align:center;
 	border: 1px solid #555;
 }
+
+.class{
+	text-align:center;
+	padding-top:90px;
+	padding-bottom:85px;
+}
+

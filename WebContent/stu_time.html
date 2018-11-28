@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="stu_time.css">
 
 <title>時間割画面</title>
+<script>
+
+</script>
 </head>
 <body>
 <!-- ヘッダー -->
@@ -29,7 +32,8 @@
 </header>
 <!-- メイン -->
 <div id="main">
-	<p class="month">月</p>
+	<span id ="month"></span>
+	<p class="">クラス</p>
 	</div>
 	<div class="button">
 	<p class="next"><input type="submit" value="→"  style="float:right"></p>
@@ -38,14 +42,13 @@
 
 <div id="table">
 	<table>
-		<tr>
-			<th rowspan="6" scope="col"><p class="class"> シ ス テ ム </p></th>
-			<td>  </td>
-			<td>  </td>
 
+		<tr>
+			<th rowspan="6"><p class="class"> シ ス テ ム </p></th>
 		</tr>
 
 		<tr>
+			<td>&nbsp;</td>
 			<td>1</td>
 			<td>2</td>
 			<td>3</td>
@@ -54,9 +57,45 @@
 		</tr>
 
 		<tr>
-			<td></td>
+			<td>1</td>
+			<td id="a">卒業研究</td>
+			<td id="b">大学</td>
+			<td id="a">a</td>
+			<td id="a">a</td>
+			<td id="a">a</td>
+		</tr>
+
+		<tr>
+		 	<td>2</td>
+		 	<td>  </td>
+			<td>  </td>
+			<td>  </td>
+			<td>  </td>
+			<td>  </td>
+		</tr>
+
+		<tr>
+		 	<td>3</td>
+		 	<td>  </td>
+			<td>  </td>
+			<td>  </td>
+			<td>  </td>
+			<td>  </td>
 		</tr>
 	</table>
 </div>
+<script>
+window.onload = function(){
+	var dateObj = new Date();
+	var m = dateObj.getMonth() + 1;
+	document.getElementById("month").innerHTML =m+"月";
+}
+document.getElementById("a").onclick= function(){
+	location.href="file:///C:/Users/154105/workspace/SotsukenDev/SotsukenDev/WebContent/stu_time_more.html";
+}
+document.getElementById("b").onclick= function(){
+	location.href="file:///C:/Users/154105/workspace/SotsukenDev/SotsukenDev/WebContent/stu_time_more.html";
+}
+</script>
 </body>
 </html>
