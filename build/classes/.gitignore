@@ -1,8 +1,2 @@
-/calendar/
-/dao/
-/filter/
-/login/
-/network/
-/sessionManager/
-/stu_punch_search/
 /stuPunchSearch/
+/dao/

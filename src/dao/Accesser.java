@@ -14,18 +14,18 @@ public class Accesser {
 	private static String pass = "root";
 
 //	ライダーのラズパイ
-	private static String raspDbName = "LOVE_BERRY";
-	private static String raspDriverName = "com.mysql.jdbc.Driver";
-	private static String raspUrl = "jdbc:mysql://10.15.154.63/" + raspDbName;
-	private static String raspUser = "admin";
-	private static String raspPass = "root";
-
-//	ぐっちのラズパイ
 //	private static String raspDbName = "LOVE_BERRY";
 //	private static String raspDriverName = "com.mysql.jdbc.Driver";
-//	private static String raspUrl = "jdbc:mysql://10.15.154.9/" + raspDbName;
-//	private static String raspUser = "testuser";
-//	private static String raspPass = "testuser";
+//	private static String raspUrl = "jdbc:mysql://10.15.154.63/" + raspDbName;
+//	private static String raspUser = "admin";
+//	private static String raspPass = "root";
+
+//	ぐっちのラズパイ
+	private static String raspDbName = "LOVE_BERRY";
+	private static String raspDriverName = "com.mysql.jdbc.Driver";
+	private static String raspUrl = "jdbc:mysql://10.15.154.9/" + raspDbName;
+	private static String raspUser = "testuser";
+	private static String raspPass = "testuser";
 
 
 	public static Connection getConnection() {

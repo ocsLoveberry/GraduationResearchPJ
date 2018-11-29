@@ -24,10 +24,8 @@ public class SQLExecuter {
 			//          	接続する
 			conn = Accesser.getRaspConnection();
 			st = conn.createStatement();
-//			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey + "') AS PASSWORD FROM STUDENT_TBL";
-			String sql = "SELECT SEKI_NO,PASSWORD FROM STUDENT_TBL";
+			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey + "') AS PASSWORD FROM STUDENT_TBL";
 			rs = st.executeQuery(sql);
-
 			//
 			//             レコードの値を取得
 			while (rs.next()) {
@@ -65,8 +63,10 @@ public class SQLExecuter {
 			conn = Accesser.getRaspConnection();
 			st = conn.createStatement();
 			//			SQL文発行 ここも変更しましたSTUDENT_TBL→OCS_JOHO_TBL 2018/11/27
-			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey
-					+ "') AS PASSWORD FROM OCS_JOHO_TBL";
+
+//			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey + "') AS PASSWORD FROM OCS_JOHO_TBL";
+			String sql = "SELECT SEKI_NO,PASSWORD FROM OCS_JOHO_TBL";
+
 			//			SQL実行
 			rs = st.executeQuery(sql);
 
@@ -97,16 +97,23 @@ public class SQLExecuter {
 		Connection conn = null;
 		Statement st = null;
 		ResultSet rs = null;
+		String sql = null;
 		List<String[]> resultStuPunch = new ArrayList<>();
-		System.out.println("searchStuPunch:"+seki_no);
-		System.out.println("searchStuPunch:"+formEntryDate);
-		System.out.println("searchStuPunch:"+formClassroom);
+		System.out.println("searchStuPunch seki_no:"+seki_no);
+		System.out.println("searchStuPunch formEntryDate:"+formEntryDate);
+		System.out.println("searchStuPunch formClassroom:"+formClassroom);
+//
 //		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no;
 //		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no  + " AND LOBE_ID = " + formClassroom;
 //		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = " + formDate + " AND LOBE_ID = " + formClassroom;
 
 //		String sql = "SELECT SEKI_NO, ENTRY_DATE, LOBE_ID FROM TIME_TBL WHERE DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = " + formEntryDate;
-		String sql = "SELECT * FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' AND LOBE_ID = " + formClassroom;
+		if(formClassroom.equals("all")) {
+			sql = "SELECT * FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' ";
+		}else {
+			sql = "SELECT * FROM TIME_TBL WHERE  SEKI_NO = " + seki_no  + " AND DATE_FORMAT(ENTRY_DATE, '%Y-%m-%d') = '"+ formEntryDate +"' AND LOBE_ID = " + formClassroom;
+		}
+
 		try {
 			conn = Accesser.getRaspConnection();
 			st = conn.createStatement();
