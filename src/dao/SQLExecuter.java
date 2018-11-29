@@ -59,10 +59,8 @@ public class SQLExecuter {
 
 		try {
 			//          	接続する
-			//			こ↑こ↓変更しましたgetConnection()→getRaspConnection() 2018/11/27
 			conn = Accesser.getRaspConnection();
 			st = conn.createStatement();
-			//			SQL文発行 ここも変更しましたSTUDENT_TBL→OCS_JOHO_TBL 2018/11/27
 
 //			String sql = "SELECT SEKI_NO, AES_DECRYPT(UNHEX(PASSWORD), '" + decryptKey + "') AS PASSWORD FROM OCS_JOHO_TBL";
 			String sql = "SELECT SEKI_NO,PASSWORD FROM OCS_JOHO_TBL";

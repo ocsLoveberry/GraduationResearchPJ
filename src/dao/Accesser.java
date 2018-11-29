@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Accesser {
+//	ローカルで遊ぶよう
 	private static String dbName = "loveberry";
 	private static String driverName = "com.mysql.jdbc.Driver";
 	private static String url = "jdbc:mysql://localhost/" + dbName;
