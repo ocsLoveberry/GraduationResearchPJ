@@ -1,6 +1,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page errorPage="/stu_punch_search_result_error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,18 +44,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% try {%>
-					<% for(int i = 0; i < 1; i++){ %>
+					<% for(int i = 0; i < resultStuPunch.size(); i++){ %>
 					<tr>
 						<td><%=resultStuPunch.get(i)[1] %></td>
 						<td><%=resultStuPunch.get(i)[2] %></td>
 					</tr>
 					<% } %>
-					<%}catch(IndexOutOfBoundsException e){
-						e.printStackTrace();
-						getServletConfig().getServletContext().getRequestDispatcher("/stu_punch_search.html").forward(request, response);
-					}
-						%>
 
 				</tbody>
 			</table>
