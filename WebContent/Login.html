@@ -6,35 +6,25 @@
 <title>LoveBerry ログイン画面</title>
 </head>
 <body>
-	<!-- 見出し(タイトル） -->
-	<div id="form1">
-		<p class="form-title1">
-			Love&Berry<br>
-		</p>
-		<p class="form-title2">
-			学生支援システム<br>
-		</p>
-	</div>
+<!-- 見出し(タイトル） -->
+<div id="form1">
+<p class="form-title1">Love&Berry<br></p>
+<p class="form-title2">学生支援システム<br></p>
+</div>
 
-	<!-- 入力フォーム -->
-	<div id="form2">
+<!-- 入力フォーム -->
+<div id="form2">
 
-		<form method="post" action="j_security_check">
-			<p class="name">UID</p>
+	<form method="post" action="j_security_check">
+	<p class="name">UID</p>
 
-			<p class="UID">
-				<input type="text" name="j_username" autofocus required>
-			</p>
+	<p class="UID"><input type="text" name="j_username" autofocus required></p>
 
-			<p class="PW">パスワード</p>
-			<p class="pass">
-				<input type="password" name="j_password" required>
-			</p>
+	<p class="PW">パスワード</p>
+	<p class="pass"><input type="password" name="j_password" required></p>
 
-			<p class="submit">
-				<input type="submit" value="ログイン">
-			</p>
-		</form>
-	</div>
+	<p class="submit"><input type="submit" value="ログイン"></p>
+	</form>
+</div>
 </body>
 </html>
