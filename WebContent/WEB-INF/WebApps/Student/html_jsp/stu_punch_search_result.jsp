@@ -24,7 +24,7 @@
 				<!-- リンク -->
 				<div class="link">
 					<a href="stu_time.html">時間割</a> <a href="stu_punch_search.html">打刻時間検索</a>
-					<a href="">ログアウト</a>
+					<a href="LogoutServlet">ログアウト</a>
 				</div>
 				<p></p>
 			</div>
