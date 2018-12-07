@@ -53,7 +53,7 @@ public class StuPunchSearch extends HttpServlet {
 //		System.out.println(resultStuPunch.get(0)[1]);
 //		System.out.println(resultStuPunch.get(0)[2]);
 		request.setAttribute("resultStuPunch", resultStuPunch);
-		getServletConfig().getServletContext().getRequestDispatcher("/stu_punch_search_result.jsp").forward(request, response);
+		getServletConfig().getServletContext().getRequestDispatcher("/WebApps/Student/html_jsp/stu_punch_search_result.jsp").forward(request, response);
 	}
 
 }

@@ -36,7 +36,7 @@ public class topDispatchServlet extends HttpServlet {
 		    dispatcher.forward(request, response);
 
 		}else if(request.isUserInRole("3")) {
-			String view = "test/stu_top.html";
+			String view = "WebApps/student/html_jsp/stu_top.html";
 		    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 
 		    dispatcher.forward(request, response);

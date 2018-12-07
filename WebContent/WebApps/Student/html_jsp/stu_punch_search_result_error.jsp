@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
-<link rel="stylesheet" href="stu_top.css">
+<link rel="stylesheet" href="../css/stu_top.css">
 <title>errorページ</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
 <div class="id">
 	<p>UID</p>
 </div>
-	<h1 class="LB"><a href="stu_top.html">Love&Berry</a></h1>
+	<h1 class="LB"><a href="WebApps/student/html_jsp/stu_top.html">Love&Berry</a></h1>
 
 <!-- リンク -->
 <div class="link">
@@ -25,7 +25,7 @@
 	<a href="stu_time.html">時間割</a>
 	<a href="stu_punch_search.html">打刻時間検索</a>
 <!-- TODO sessionを切る処理 -->
-	<a href="">ログアウト</a>
+	<a href="../../../LogoutServlet">ログアウト</a>
 </div>
 
 </div>

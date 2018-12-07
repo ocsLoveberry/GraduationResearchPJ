@@ -12,7 +12,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>FORM</web-resource-name>
-      <url-pattern>/test/*</url-pattern>
+      <url-pattern>/WebApps/Student/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>1</role-name>
@@ -22,8 +22,8 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/Login.html</form-login-page>
-      <form-error-page>/loginerror.jsp</form-error-page>
+      <form-login-page>/Login/Login.html</form-login-page>
+      <form-error-page>/Login/loginerror.jsp</form-error-page>
     </form-login-config>
   </login-config>
   <security-role>

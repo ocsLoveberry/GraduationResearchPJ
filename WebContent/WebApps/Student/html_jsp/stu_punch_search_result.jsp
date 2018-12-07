@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page errorPage="/stu_punch_search_result_error.jsp" %>
+<%@ page errorPage="stu_punch_search_result_error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil"
 	rel="stylesheet">
-<link rel="stylesheet" href="stu_punch_search_result.css">
+<link rel="stylesheet" href="../css/stu_punch_search_result.css">
 <title>打刻検索画面</title>
 </head>
 <body>
@@ -19,12 +19,13 @@
 		<div class="id">
 			<div id="header">
 				<h1 class="LB">
-					<a href="stu_top.html">Love&Berry</a>
+					<a href="WebApps/student/html_jsp/stu_top.html">Love&Berry</a>
 				</h1>
 				<!-- リンク -->
 				<div class="link">
-					<a href="stu_time.html">時間割</a> <a href="stu_punch_search.html">打刻時間検索</a>
-					<a href="LogoutServlet">ログアウト</a>
+					<a href="stu_time.html">時間割</a>
+					 <a href="stu_punch_search.html">打刻時間検索</a>
+					<a href="../../../LogoutServlet">ログアウト</a>
 				</div>
 				<p></p>
 			</div>

@@ -59,7 +59,7 @@ public class Login extends HttpServlet {
 				response.sendRedirect("Tea_top.html");
 			}else {
 //			生徒ならば
-			response.sendRedirect("stu_top.html");
+			response.sendRedirect("WebApps/student/html_jsp/stu_top.html");
 			}
 //			ログインに失敗したとき
 		}else {
