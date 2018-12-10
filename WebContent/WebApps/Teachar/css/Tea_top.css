@@ -2,7 +2,7 @@
 body,p,div,input{margin: 0}
 
 body{
-	background-image: url("img/nikaido.png");
+	background-image: url("../../../img/nikaido.png");
 	background-repeat:no-repeat;
 	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
 	background-position:center center; /*常に画像が中央に表示される*/
@@ -14,7 +14,7 @@ body{
 	padding:2px;
 	text-align:center;
 	dispaly:flex;
-	background-image:url("img/tea_header.jpg");
+	background-image:url("../../../img/tea_header.jpg");
 	background-repeat:no-repeat;
 	background-size:cover;
 }

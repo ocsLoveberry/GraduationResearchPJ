@@ -3,7 +3,7 @@
 body,p,div,input{margin: 0}
 
 body{
-	background-image: url("img/normal.jpg");
+	background-image: url("../../../img/normal.jpg");
 	background-repeat:no-repeat;
 	background-attachment:fixed;	/*背景画像をスクロールしないように固定*/
 	background-position:center center; /*常に画像が中央に表示される*/
@@ -16,7 +16,7 @@ body{
 	margin:0px auto;
 	padding:2px;
 	dispaly:flex;
-	background-image:url("img/black.jpg");
+	background-image:url("../../../img/black.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
 	color:#FFFFFF;
@@ -127,7 +127,7 @@ h1{
 	width:700px auto;
 	margin:200px auto;
 	padding:150px;
-	/* background-image:url("img/form.jpg");
+	/* background-image:url("../../../img/form.jpg");
 	background-repeat:no-repeat;
 	background-size:cover;
 	opacity:0.7;*/
